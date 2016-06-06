@@ -1,0 +1,20 @@
+<h1> Welcome to the Great Number Game!</h1>
+<p>I am thinking of a number between 1 and 100... </p>
+<p>Take a guess!</p>
+
+<!-- Display for testing purposes! -->
+<!--  <%= @session %> -->
+
+
+<div id="guess">
+  <% if flash[:message] %>
+    <p><%= flash[:message] %></p>
+   <% end %>	
+  <form action="/guess" method="post"> 
+  	<!-- NEED THIS AUTHENTICITY TOKEN for all forms! -->
+  	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  	<input type="text" name="guess"><br>
+  	<input type="submit" value="Guess!">
+  </form>
+
+</div> 
